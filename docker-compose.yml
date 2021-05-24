@@ -1,0 +1,53 @@
+version: '3.3'
+
+services:
+    db:
+        image: mysql:5.7
+        volumes:
+            - db_data:/var/lib/mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: somewordpress
+            MYSQL_DATABASE: wordpress
+            MYSQL_USER: wordpress
+            MYSQL_PASSWORD: wordpress
+
+    wordpress:
+        depends_on:
+            - db
+        image: wordpress:5.6-php7.3
+        volumes:
+            - wp_data:/var/www/html
+            - ./src/wp-content/themes:/var/www/html/wp-content/themes:ro
+            - ./src/.htaccess:/var/www/html/.htaccess:ro
+        ports:
+            - "80:80"
+        restart: always
+        environment:
+            WORDPRESS_DB_HOST: db:3306
+            WORDPRESS_DB_USER: wordpress
+            WORDPRESS_DB_PASSWORD: wordpress
+            WORDPRESS_DB_NAME: wordpress
+            WORDPRESS_TABLE_PREFIX: "wp_"
+            WORDPRESS_DEBUG: 1
+        
+    wpcli:
+        build: 
+            context: .
+            dockerfile: docker/wpcli/Dockerfile
+        depends_on:
+            - wordpress
+            - db
+        volumes:
+            - wp_data:/var/www/html
+            - ./src/wp-content/themes:/var/www/html/wp-content/themes:ro
+        environment:
+            INSTALL_PATH: /var/www/html
+            WP_URL: http://localhost
+            WP_ADMIN: admin
+            WP_PASS: password
+            WP_THEME: test-theme
+
+volumes:
+    db_data: {}
+    wp_data: {}

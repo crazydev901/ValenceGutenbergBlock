@@ -1,0 +1,78 @@
+[
+    {
+        "id": 6,
+        "title": "small-container",
+        "icon": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<rect opacity=\"0.25\" width=\"15\" height=\"15\" rx=\"4\" transform=\"matrix(-1 0 0 1 22 7)\" fill=\"currentColor\" \/>\n<rect width=\"15\" height=\"15\" rx=\"4\" transform=\"matrix(-1 0 0 1 17 2)\" fill=\"currentColor\" \/>\n<\/svg>\n",
+        "keywords": [],
+        "slug": "lazyblock\/small-container",
+        "description": "",
+        "category": "design",
+        "category_label": "design",
+        "supports": {
+            "customClassName": true,
+            "anchor": false,
+            "align": [
+                "wide",
+                "full"
+            ],
+            "html": false,
+            "multiple": true,
+            "inserter": true
+        },
+        "ghostkit": {
+            "supports": {
+                "spacings": false,
+                "display": false,
+                "scrollReveal": false,
+                "frame": false,
+                "customCSS": false
+            }
+        },
+        "controls": {
+            "control_513b394afb": {
+                "type": "text",
+                "name": "title",
+                "default": "",
+                "label": "Title",
+                "help": "",
+                "child_of": "",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "placeholder": "",
+                "characters_limit": ""
+            },
+            "control_f7ea8145e0": {
+                "type": "text",
+                "name": "content",
+                "default": "",
+                "label": "Content",
+                "help": "",
+                "child_of": "",
+                "placement": "content",
+                "width": "100",
+                "hide_if_not_selected": "false",
+                "save_in_meta": "false",
+                "save_in_meta_name": "",
+                "required": "false",
+                "placeholder": "",
+                "characters_limit": ""
+            }
+        },
+        "code": {
+            "output_method": "template",
+            "editor_html": "",
+            "editor_callback": "",
+            "editor_css": "",
+            "frontend_html": "",
+            "frontend_callback": "",
+            "frontend_css": "",
+            "show_preview": "always",
+            "single_output": false
+        },
+        "condition": []
+    }
+]
